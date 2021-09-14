@@ -20,7 +20,6 @@ body{
 #top0 p{
   color: #fff;
   text-align: center;
-  /* font-size: 32px; */
 }
 
 #top0{
@@ -213,7 +212,7 @@ main{
 }
 
 .modalwindow #modal.hidden{
-  transform: translate(0,-500px);
+  transform: translate(0,-1000px);
 }
 
 /* carousel */
@@ -432,7 +431,7 @@ main{
 
 @media (max-width: 601px){
   .title{
-    font-size: 18px;
+    font-size: 24px;
   }
   }
 
