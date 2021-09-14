@@ -4,7 +4,10 @@
   // ハンバーガーメニュー
   const open0 = document.getElementById('open0');
   const overlay = document.querySelector('.overlay');  /*IDを指定しておらず、CLASSを指定している時に使える*/
-  const close0 = document.getElementById('close0')
+  const close0 = document.getElementById('close0');
+ const link1 = document.querySelector('.link1'); 
+ const link2 = document.querySelector('.link2'); 
+ const link3 = document.querySelector('.link3'); 
 
   open0.addEventListener('click',() => {
     overlay.classList.add('show');
@@ -12,6 +15,19 @@
   });
 
   close0.addEventListener('click',() => {
+    overlay.classList.remove('show');
+    open0.classList.remove('hide');
+  });
+
+  link1.addEventListener('click',() => {
+    overlay.classList.remove('show');
+    open0.classList.remove('hide');
+  });
+  link2.addEventListener('click',() => {
+    overlay.classList.remove('show');
+    open0.classList.remove('hide');
+  });
+  link3.addEventListener('click',() => {
     overlay.classList.remove('show');
     open0.classList.remove('hide');
   });
