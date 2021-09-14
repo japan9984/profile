@@ -1,0 +1,422 @@
+
+
+body{
+  margin: 0;
+}
+
+
+/* profile */
+#top0 h1{
+  padding-top: 50px;
+  /* font-size: 64px; */
+  text-align: center;
+  color: #fff;
+}
+
+#top0 p{
+  color: #fff;
+  text-align: center;
+  /* font-size: 32px; */
+}
+
+#top0{
+  width: 100%;
+  height: 200px;
+  margin: 0 auto;
+  background: black;
+}
+
+/* humbergermenu */
+header{
+  display: flex;
+  padding: 0 16px;
+}
+
+header h1{
+  margin: 0;
+  font-size: 22px;
+  line-height: 64px;
+}
+
+.sp-menu{
+  margin-left: auto;
+}
+
+.sp-menu #open0{
+  font-size:32px;
+  line-height:64px;
+  cursor: pointer;
+}
+
+.sp-menu #open0.hide{
+  display: none;
+}
+
+main{
+  padding:0 16px;
+}
+
+.overlay{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,0.95);
+  text-align: center;
+  padding:64px;
+  opacity: 0;
+  pointer-events: none;    /*これ大事*/
+  transition: opacity .6s;
+}
+
+.overlay.show{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay #close0{
+  position: absolute;
+  top:16px;
+  right: 16px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.overlay ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.overlay li{
+  margin-top: 24px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .3s,transform 0.3s;
+}
+
+.overlay.overlay.show li{
+  opacity: 1;
+  transform: none;
+}
+
+.overlay.show li:nth-child(1){
+  transition-delay: .1s;
+}
+.overlay.show li:nth-child(2){
+  transition-delay: .2s;
+}
+.overlay.show li:nth-child(3){
+  transition-delay: .3s;
+}
+
+.pc-menu {
+  display:none;
+}
+
+@media (min-width: 600px){
+  .pc-menu{
+    display:block;
+    margin-left: auto;
+  }
+
+  .pc-menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .pc-menu a{
+    display: block;
+    width: 80px;
+    line-height: 64px;
+    text-align: center;
+  }
+
+  .pc-menu a:hover{
+    background: #f2f2f2;
+  }
+
+  .sp-menu{
+    display: none;
+  }
+
+}
+
+/* modalwindow */
+.modalwindow{
+  margin-bottom: 100px;
+}
+
+.modalwindow #open,#close{
+  cursor: pointer;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  padding: 12px 0;
+  margin: 16px auto 0;
+}
+
+.modalwindow #mask{
+  background: rgba(0,0,0,0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.modalwindow #modal{
+  background: #fff;
+  width: 300px;
+  padding: 20px;
+  border-radius: 4px;
+  position: absolute;
+  top:40px;
+  left:0;  /*1*/
+  right:0; /*2*/
+  margin:0 auto; /*3*/
+                               /*1,2,3でabsoluteで中央揃え*/
+  transition: transform 0.4s;
+  z-index: 1;
+}
+
+.modalwindow #modal > p {
+  margin: 0 0 20px;
+}
+
+.modalwindow #mask.hidden{
+  display: none;
+}
+
+.modalwindow #modal.hidden{
+  transform: translate(0,-500px);
+}
+
+
+
+
+
+
+
+/* carousel */
+
+.carousel0 .carousel{
+  width: 80%;
+  margin: 16px auto;
+}
+
+.carousel0 .container{
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel0 ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  transition: transform .3s;
+}
+
+.carousel0 li{
+  height: 100%;
+  min-width: 100%;
+}
+
+.carousel0 li img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#prev,
+#next{
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(0,0,0,.8);
+  color: #fff;
+  font-size: 24px;
+  padding: 0 8px 4px;
+  cursor: pointer;
+}
+
+#prev:hover,
+#next:hover{
+  opacity: .8;
+}
+
+#prev{
+  left: 0;
+}
+
+#next{
+  right: 0;
+}
+
+.carousel0 .hidden{
+  display: none;
+}
+
+.carousel0 nav{
+  margin-top: 16px;
+  text-align: center;
+}
+
+.carousel0 nav button + button{
+  margin-left: 8px;
+}
+
+.carousel0 nav button{
+  border: none;
+  width: 16px;
+  height: 16px;
+  background: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.carousel0 nav .current{
+  background: #999;
+}
+
+.carousel0 h1{
+  text-align: center;
+}
+
+/* tabmenu  */
+
+.tabmenu .container{
+  margin: 30px auto;
+  width: 80%;
+}
+
+.tabmenu .menu{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.tabmenu .menu li a{
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  padding: 8px 0;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px 4px 0 0;
+}
+
+.tabmenu .menu li a:not(.active):hover{
+  opacity: 0.5;
+  transition: opacity .4s;
+}
+
+.tabmenu .menu li a.active{
+  background: #333;
+  color: #fff;
+}
+
+.tabmenu .content.active{
+  background: #333;
+  color: #fff;
+  min-height: 150px;
+  padding: 12px;
+  display: block;
+}
+
+.tabmenu .content{
+  display: none;
+}
+
+.tabmenu h1{
+  text-align: center;
+}
+
+
+/* accordion */
+
+.accordion{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.accordion h1{
+  padding: 8px 16px;
+  margin-bottom: 16px;
+}
+
+.accordion dl{
+  margin: 0;
+}
+
+.accordion dt{
+  padding: 8px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.accordion dt::before{
+  content:'Q.';
+}
+
+.accordion dt::after{
+  content:'+';
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  transition: transform .3s;
+}
+
+.accordion dl>div.appear dt::after{
+  transform: rotate(45deg);
+}
+
+.accordion dd{
+  margin: 0;
+  padding: 8px;
+  display: none;
+}
+
+.accordion dd::before{
+  content: 'A.';
+}
+
+.accordion dl>div.appear dd{
+  display: block;
+  animation: .3s fadeIn;
+}
+
+.accordion dl>div{
+  margin-bottom: 8px;
+}
+
+.accordion h1{
+  text-align: center;
+}
+
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100%{
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+
+
+
